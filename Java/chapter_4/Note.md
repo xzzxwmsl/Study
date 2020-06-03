@@ -20,3 +20,15 @@ Unicode 范围从'\u0000'~~'\uFFFF'码
 ![Character](images/Character.png)
 
 ## String
+### 常用的一些方法
+![常用方法](images/String简单方法.png)
+
+### 实例方法和静态方法
+例如String中的方法，需要通过具体对象的实例来调用，这些方法就成为***实例方法***。
+
+而非实例方法又称作***静态方法***，比如Math类的方法都是静态方法。他们没有绑定到一个特定的对象实例上。
+
+### String 的比较方法
+![compare](images/String的比较方法.png)
+![compareTo](images/compareTo.png)
+![indexOf](images/indexOf.png)

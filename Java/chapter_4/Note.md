@@ -20,6 +20,7 @@ Unicode 范围从'\u0000'~~'\uFFFF'码
 ![Character](images/Character.png)
 
 ## String
+
 ### 常用的一些方法
 ![常用方法](images/String简单方法.png)
 
@@ -32,3 +33,7 @@ Unicode 范围从'\u0000'~~'\uFFFF'码
 ![compare](images/String的比较方法.png)
 ![compareTo](images/compareTo.png)
 ![indexOf](images/indexOf.png)
+
+## 格式化输出
+![常用的格式标识符](images/常用的格式标识符.png)
+![指定宽度与精度](images/指定宽度与精度.png)

@@ -2,7 +2,6 @@ package chapter_7_8;
 
 // 数组的声明、创建、匿名数组创建，方法调用数组
 
-import sun.net.www.content.text.plain;
 
 public class Array_1 {
     public static void main(String[] args) {

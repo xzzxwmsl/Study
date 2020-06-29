@@ -13,10 +13,10 @@ public class Nine_5 {
         show(testA,test2);
     }
 
-    static void show(int testA,Test2 test2){
+    public static void show(int testA,Test2 test2){
         System.out.printf("value of testA is %d, value of test2 is %d\n", testA,test2.getA());
     }
-    static void change(int testA, Test2 test2){
+    public static void change(int testA, Test2 test2){
         testA++;
         test2.setA(test2.getA()+1);
     }

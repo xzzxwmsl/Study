@@ -1,0 +1,161 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Hello<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_1.Hello",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DateTypeClass<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_10.DateTypeClass",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestStackOfIntegers<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_10.TestStackOfIntegers",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Scanner_test<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_2.Scanner_test",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Third_1<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_3.Third_1",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Forth_1<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_4.Forth_1",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Forth_2<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_4.Forth_2",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Forth_3<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_4.Forth_3",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Five_1<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_5.Five_1",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Hex2Dec<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_6.Hex2Dec",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Six_1<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_6.Six_1",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Array_1<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_7_8.Array_1",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Array_2<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_7_8.Array_2",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Array_3<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_7_8.Array_3",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Nine_1<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_9.Nine_1",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Nine_2<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_9.Nine_2",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Nine_3<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_9.Nine_3",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Nine_4_1<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_9.Nine_4_1",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Nine_4_2<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_9.Nine_4_2",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Nine_5<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_9.Nine_5",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Nine_6<Java_f538d961>",
+            "request": "launch",
+            "mainClass": "chapter_9.Nine_6",
+            "projectName": "Java_f538d961"
+        }
+    ]
+}

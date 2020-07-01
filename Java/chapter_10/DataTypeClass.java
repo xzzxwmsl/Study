@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 // 介绍基本数据类型的类,BigInteger, BigDecimal
-public class DateTypeClass {
+public class DataTypeClass {
     public static void main(String[] args) {
         // 包装类没有无参构造方法。所有包装类的实例都是不可变的
         // 这意味着一旦创建对象后，它们的内部值就不能再改变
@@ -35,7 +35,7 @@ public class DateTypeClass {
         BigDecimal c = a.divide(b, 2, BigDecimal.ROUND_UP);
         System.out.println(c);
 
-        System.out.println("10! = "+factorial(10));
+        System.out.println("5! = "+factorial(5));
         System.out.println("100! = "+factorial(100));
     }
 

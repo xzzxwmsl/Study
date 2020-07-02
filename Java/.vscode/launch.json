@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "Java_f538d961"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DataTypeClass",
             "request": "launch",
             "mainClass": "chapter_10.DataTypeClass",

@@ -54,7 +54,7 @@ public class TestString {
             System.out.print(c + " ");
         }
         System.out.println();
-        // 将string从a ~ b-1的子串复制到destination数组中
+        // 将String从a ~ b-1的子串复制到destination数组中
         "ABCDEFG".getChars(2, 5, ss1, 1);
         for (char c : ss1) {
             System.out.print(c + " ");

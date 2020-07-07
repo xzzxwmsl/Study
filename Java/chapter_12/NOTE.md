@@ -26,7 +26,7 @@
 ***public void myMethod() throws IOException***  
 关键字 throws 表明 myMethod 方法可齙会抛出异常 IOException。如果方法可能会抛出多个异常，就可以在关键字 throws 后添加一个用逗号分隔的异常列表：  
 ***public void myMethod() throws Exception_1，Exception_2...Exception_n***  
-##### 2.抛出异常
+#### 2.抛出异常
 ![](images/抛出异常例子.png)
 通常，JavaAPI 中的每个
 异常类至少有两个构造方法：一个无参构造方法和一个带可描述这个异常的 String 参数的构造方法。该参數称为异常消息（exceptionmessage), 它可以用 getMessage()获取。  
@@ -37,6 +37,6 @@
 **！注意**：从一个通用的父类可以派生出各种异常类。如果一个catch块可以捕获某个父类(如Exception)，那么一定可以捕获他的子类的异常对象，(如RuntimeException)。  
 **！注意**catch块的捕获顺序很重要，应该子类在前，父类在后。。如果父类的 catch 块出现在子类的catch 块之前，就会导致编译错误。例如，a 中的顺序是错误的，因为 RuntimeException是 Exception 的一个子类。正碎的顺序应该如 b 中所示。
 ![](images/顺序例子.png)
-对于使用同样的处理代码处理多个异常的情况，可以使用新的 JDK7 的多捕获特征(multi-catch feature) 简化异常的代码编写。语法是
+对于使用同样的处理代码处理多个异常的情况，可以使用新的 JDK7 的多捕获特征(multi-catch feature) 简化异常的代码编写。语法是  
 ***catch (Exceptionl|Exception2丨… 丨Exceptionk ex){ // Same code for handling these exceptions}***  
 每个异常类型使用竖线（ i )与下一个分隔。如果其中一个异常被捕获，則执行处理的代码。

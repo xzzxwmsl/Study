@@ -12,11 +12,19 @@ public class QuotienWithException {
             int b = input.nextInt();
             int c = div(a, b);
             System.out.println("Result is : " + c);
-        } catch (ArithmeticException exception) {
+        } catch (ArithmeticException | InputMismatchException exception) {
             System.out.println(exception);
-        } catch (InputMismatchException ex) {
-            System.out.println("Should input Integer");
+            exception.printStackTrace();
+            System.out.println(exception.toString());
+            System.out.println(exception.getMessage());
         }
+        System.out.println("FINALLY");
+        // } catch (InputMismatchException ex) {
+        // System.out.println("Should input Integer");
+        // ex.printStackTrace();
+        // System.out.println(ex.toString());
+        // System.out.println(ex.getMessage());
+        // }
     }
 
     public static int div(int a, int b) {

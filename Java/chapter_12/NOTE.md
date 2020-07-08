@@ -26,10 +26,12 @@
 ***public void myMethod() throws IOException***  
 关键字 throws 表明 myMethod 方法可齙会抛出异常 IOException。如果方法可能会抛出多个异常，就可以在关键字 throws 后添加一个用逗号分隔的异常列表：  
 ***public void myMethod() throws Exception_1，Exception_2...Exception_n***  
+
 #### 2.抛出异常
 ![](images/抛出异常例子.png)
 通常，JavaAPI 中的每个
 异常类至少有两个构造方法：一个无参构造方法和一个带可描述这个异常的 String 参数的构造方法。该参數称为异常消息（exceptionmessage), 它可以用 getMessage()获取。  
+
 #### 3.捕获异常
 如果在执行 try 块的过程中没有出现异常，则跳过 catch 子句。  
 如果 try 块中的某条语句抛出一个异常，Java 就会跳过 try 块中剩余的语句，然后开始査找处理这个异常的代码的过程。处理这个异常的代码称为**异常处理器**（exception handler);可以从当前的方法开始，沿着方法调用链，按照异常的反向传播方向找到这个处理器。从第一个到最后一个逐个检査 catch 块，判断在 catch 块中的异常类实例是否是该异常对象的类型。如果是，就将该异常对象陚值给所声明的变量，然后执行 catch 块中的代码。如果没有发现异常处理器，Java 会退出这个方法，把异常传递给调用这个方法的方法，继续同样的过程来査找处理器。如果在调用的方法链中找不到处理器，程序就会终止并且在控制台上打印出错信息。寻找处理器的过程称为捕获一个异常（catching an exception)。  
@@ -39,4 +41,17 @@
 ![](images/顺序例子.png)
 对于使用同样的处理代码处理多个异常的情况，可以使用新的 JDK7 的多捕获特征(multi-catch feature) 简化异常的代码编写。语法是  
 ***catch (Exceptionl|Exception2丨… 丨Exceptionk ex){ // Same code for handling these exceptions}***  
-每个异常类型使用竖线（ i )与下一个分隔。如果其中一个异常被捕获，則执行处理的代码。
+每个异常类型使用竖线( | )与下一个分隔。如果其中一个异常被捕获，則执行处理的代码。  
+
+#### 4.从异常中获取信息  
+printStackTrace()方法在控制台打印栈跟踪信息  
+getStackTrace()方法提供编程的方式，来访问printStackTrace()打印输出的栈跟踪信息  
+getMessage()方法在控制台上打印Throwable对象和他的调用堆栈信息。  
+toString()方法返回三个字符串的连接：1)异常类的全名 2)":" 3)getMessage()的信息
+
+### finally子句
+在任何情况下，finally 块中的代码都会执行，不论 try 块中是否出现异常或者是否被捕获。考虑下面三种可能出现的情况：  
+1.如果 try 块中没有出现异常，执行 finalStatements, 然后执行 try 语句的下一条语句。  
+2.如果 try 块中有一条语句引起异常，并被 catch 块捕获，然后跳过 try 块的其他语句，执行 catch 块和 finally 子句。执行 try 语句之后的下一条语句。  
+3.如果 try 块中有一条语句引起异常，但是没有被任何 catch 块捕获，就会跳过 try 块中的其他语句，执行 finally 子句，并且将异常传递给这个方法的调用者。  
+！ 即使在到达 finally 块之前有一个 return 语句，finally 块还是会执行

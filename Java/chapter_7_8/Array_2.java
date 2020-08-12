@@ -1,5 +1,7 @@
 package chapter_7_8;
 
+import java.util.Arrays;
+
 // Arrays 类的使用
 public class Array_2 {
     public static void main(String[] args) {
@@ -10,7 +12,7 @@ public class Array_2 {
         showArray("array1", array1);
 
         showArray("array2", array2);
-        java.util.Arrays.parallelSort(array2, 1, 4);// 对array[low]~array[high-1]进行增序排序
+        Arrays.parallelSort(array2,1,5);// 对array[low]~array[high-1]进行增序排序
         showArray("array2", array2);
 
         int[] array3 = { 9, 7, 5, 3, 1, 2, 4, 6, 8 };

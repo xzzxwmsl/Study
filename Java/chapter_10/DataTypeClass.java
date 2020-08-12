@@ -11,11 +11,13 @@ public class DataTypeClass {
         Integer integer = new Integer("30"); // 可以将String类型转化为整数型
         System.out.println(integer);
         System.out.println(integer.intValue() + 10);
+        System.out.println(integer + 20);
         System.out.println(integer.compareTo(10));
-        System.out.println(Integer.MAX_VALUE + " " + integer.MAX_VALUE);
+        System.out.println(Integer.MAX_VALUE + " " + integer.MIN_VALUE);
         String s = "20";
         int x = 10;
         System.out.println(x + Integer.parseInt(s));// 使用Integer的静态方法
+        // Integer.parseInt("30");
         System.out.println("2进制转化为10进制: " + Integer.parseInt("11", 2));
         System.out.println("16进制转化为10进制: " + Integer.parseInt("FF", 16));
         System.out.println("13进制转化为10进制: " + Integer.parseInt("1A", 13));
@@ -35,8 +37,8 @@ public class DataTypeClass {
         BigDecimal c = a.divide(b, 2, BigDecimal.ROUND_UP);
         System.out.println(c);
 
-        System.out.println("5! = "+factorial(5));
-        System.out.println("100! = "+factorial(100));
+        System.out.println("5! = " + factorial(5));
+        System.out.println("100! = " + factorial(100));
     }
 
     public static BigInteger factorial(int n) {

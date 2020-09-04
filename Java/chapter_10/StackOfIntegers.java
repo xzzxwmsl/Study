@@ -2,7 +2,6 @@ package chapter_10;
 
 import java.lang.reflect.Array;
 
-import javafx.scene.shape.Ellipse;
 
 public class StackOfIntegers {
     private int size;

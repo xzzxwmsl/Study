@@ -1,7 +1,5 @@
 package chapter_10;
 
-import javax.naming.ldap.ManageReferralControl;
-
 public class TestStackOfIntegers {
     public static void main(String[] args) {
         StackOfIntegers stackOfIntegers = new StackOfIntegers(4);

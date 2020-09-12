@@ -1,6 +1,5 @@
 package chapter_13;
 
-import jdk.nashorn.internal.ir.BlockLexicalContext;
 
 public abstract class GeometricObject {
     private String color;

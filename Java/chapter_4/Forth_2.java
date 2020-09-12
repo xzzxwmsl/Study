@@ -3,7 +3,6 @@ package chapter_4;
 import java.lang.ProcessBuilder.Redirect.Type;
 import java.util.Scanner;
 
-import sun.awt.AWTAccessor.SystemTrayAccessor;
 
 //String
 public class Forth_2 {

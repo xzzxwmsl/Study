@@ -3,7 +3,6 @@ package chapter_9;
 import java.util.Date;
 import java.util.Random;
 
-import sun.awt.AWTAccessor.SystemTrayAccessor;
 
 public class Nine_2 {
     public static void main(String[] args) {

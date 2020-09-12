@@ -3,7 +3,6 @@ package chapter_12.FileStudy;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import jdk.javadoc.internal.doclets.formats.html.resources.standard;
 
 public class WebCrawler {
     public static void main(String[] args) {

@@ -9,7 +9,7 @@ public class TestSparseArray {
         System.out.println("--------原始矩阵如下：----------");
         showArray(testArray);
 
-        int[][] sparseArray = SparseArray.getSparseArray(testArray, SparseArray.getValuedLength(testArray));// 得到稀疏矩阵
+        int[][] sparseArray = SparseArray.getSparseArray(testArray);// 得到稀疏矩阵
 
         System.out.println("--------稀疏矩阵如下：----------");
         showArray(sparseArray);

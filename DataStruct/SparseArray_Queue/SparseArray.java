@@ -12,7 +12,8 @@ public class SparseArray {
         return sum;
     }
 
-    public static int[][] getSparseArray(int[][] array, int sum) {
+    public static int[][] getSparseArray(int[][] array) {
+        int sum=getValuedLength(array);
         int[][] newArray = new int[sum + 1][3];
         newArray[0][0] = array.length;// 原始数组的行数
         newArray[0][1] = array[0].length;// 列数

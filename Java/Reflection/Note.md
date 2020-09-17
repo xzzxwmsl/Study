@@ -31,5 +31,33 @@ Class cls = String.class
 ```
 ### 2 如果有实例的变量，那么可以通过getClass()方法获取
 ```Java
-
+String s="Test";
+Class cls=s.getClass();
 ```
+### 3.如果记得实例的全名，可以通过静态方法Class.forName()获得  
+```Java
+Class cls = Class.forName("Java.lang.String");
+```
+因为Class实例在JVM中是唯一的，所以获取到的Class的实例都是同一个实例，所以
+```Java
+a=String.class;
+String s="x";
+c=s.getClass();
+a==c;
+```
+是等价的。
+
+## ***instance of*** 和 ***Class***的区别
+用instanceof不但匹配指定类型，还匹配指定类型的子类。而用==判断class实例可以精确地判断数据类型，但不能作子类型比较。  
+通常情况下，我们应该用instanceof判断数据类型，因为面向抽象编程的时候，我们不关心具体的子类型。只有在需要精确判断一个类型是不是某个class的时候，我们才使用==判断class实例。
+
+## 用Class创建实例
+当获得到一个Class实例，我们可以用它来创建对应的实例类型  
+```Java
+// 获取String的Class实例:
+Class cls = String.class;
+// 创建一个String实例:
+String s = (String) cls.newInstance();
+```
+上述代码相当于new String()。通过Class.newInstance()可以创建类实例，它的局限是：只能调用public的无参数构造方法。带参数的构造方法，或者非public的构造方法都无法通过Class.newInstance()被调用。
+ 

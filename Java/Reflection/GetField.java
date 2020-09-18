@@ -1,5 +1,4 @@
 package reflection;
-
 import java.lang.module.ModuleDescriptor.Modifier;
 import java.lang.reflect.Field;
 
@@ -29,7 +28,7 @@ public class GetField {
         Class peoCls = people2.getClass();
 
         Field stuCountry=peoCls.getDeclaredField("country");
-        // 因为country是private，所以可以先设置其可访问性
+        // 因为country是pri v ate，所以可以先设置其可访问性
         stuCountry.setAccessible(true);
         // 通过Class的Field获取特定实例的字段值
         Object valueCountry = stuCountry.get(people2);

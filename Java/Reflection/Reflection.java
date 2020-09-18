@@ -1,17 +1,16 @@
 package reflection;
 
 public class Reflection {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Object n1 = Integer.valueOf("12");
         Number n2 = Double.valueOf(12.2);
         // String s1 =Integer.valueOf(1); // error: 没有继承关系，不能直接赋值
         Class a, b, c;
         a = String.class;
-        // b=Class.forName("Java.lang.Class");
+        // b = Class.forName("Java.lang.String");
         String s = "x";
         c = s.getClass();
-
-        System.out.println(a == c);
+        // System.out.printf("%b,%b,%b", a == c, a == b, b == c);
 
         // ***instance of*** 和 ***Class***的区别
         Integer testIntegetOne = Integer.valueOf(1);
@@ -32,10 +31,10 @@ public class Reflection {
         System.out.println("---------------");
         showInfo(int.class);
 
-    }  
+    }
 
     static void showInfo(Class cls) {
-        System.out.println("Name : "+cls.getName());
+        System.out.println("Name : " + cls.getName());
         System.out.println("Simple name: " + cls.getSimpleName());
         if (cls.getPackage() != null) {
             System.out.println("Package name: " + cls.getPackage().getName());
@@ -46,4 +45,3 @@ public class Reflection {
         System.out.println("is primitive: " + cls.isPrimitive());
     }
 }
-

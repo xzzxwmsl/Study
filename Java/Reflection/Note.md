@@ -60,4 +60,49 @@ Class cls = String.class;
 String s = (String) cls.newInstance();
 ```
 上述代码相当于new String()。通过Class.newInstance()可以创建类实例，它的局限是：只能调用public的无参数构造方法。带参数的构造方法，或者非public的构造方法都无法通过Class.newInstance()被调用。
- 
+
+# 通过Class获取字段
+## 获取Field
+Field getField(name)：根据字段名获取某个***public***的field（包括父类）  
+Field getDeclaredField(name)：根据字段名获取当前类的某个field（不包括父类）  
+Field[] getFields()：获取所有***public***的field（包括父类）  
+Field[] getDeclaredFields()：获取当前类的所有field（不包括父类）  
+
+## 获取字段值
+String 定义 ：
+```Java
+public final class String {
+    private final byte[] value;
+}
+```
+
+有童鞋会问：如果使用反射可以获取private字段的值，那么类的封装还有什么意义？  
+
+答案是正常情况下，我们总是通过p.name来访问Person的name字段，编译器会根据public、protected和private决定是否允许访问字段，这样就达到了数据封装的目的。  
+
+而反射是一种非常规的用法，使用反射，首先代码非常繁琐，其次，它更多地是给工具或者底层框架来使用，目的是在不知道目标实例任何信息的情况下，获取特定字段的值。  
+
+此外，setAccessible(true)可能会失败。如果JVM运行期存在SecurityManager，那么它会根据规则进行检查，有可能阻止setAccessible(true)。例如，某个SecurityManager可能不允许对java和javax开头的package的类调用setAccessible(true)，这样可以保证JVM核心库的安全。  
+
+```Java
+Object targetObject = new targetClass(); //目标类的实例
+Class clsOfTargetObject = targetObject.getClass();
+
+Field fieldOfTargetObject = clsOfTargetObject.getDeclaredName("name");
+
+Object value = fieldOfTargetObject.get(targetObject);
+```
+## 修改字段值
+```Java
+fieldOfTargetObject.set(originObject,targetValue);
+```
+
+
+# Summary
+JVM为每个加载的class及interface创建了对应的Class实例来保存class及interface的所有信息；
+
+获取一个class对应的Class实例后，就可以获取该class的所有信息；
+
+通过Class实例获取class信息的方法称为反射（Reflection）；
+
+JVM总是动态加载class，可以在运行期根据条件来控制加载class。

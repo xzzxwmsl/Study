@@ -2,6 +2,7 @@ package reflection;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.*;
 
 public class GetMethod {
     public static void main(String[] args) throws Exception {

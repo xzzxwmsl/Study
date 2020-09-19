@@ -191,3 +191,5 @@ Object.class.isAssignableFrom(Integer.class); // true，因为Integer可以赋�
 Integer.class.isAssignableFrom(Number.class); // false，因为Number不能赋值给Integer
 ```
 
+# 动态代理
+详情见代码DynamicProxy.java

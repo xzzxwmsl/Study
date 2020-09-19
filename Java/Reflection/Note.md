@@ -61,6 +61,15 @@ String s = (String) cls.newInstance();
 ```
 上述代码相当于new String()。通过Class.newInstance()可以创建类实例，它的局限是：只能调用public的***无参数构造方法***。带参数的构造方法，或者非public的构造方法都无法通过Class.newInstance()被调用。
 
+## Summary
+JVM为每个加载的class及interface创建了对应的Class实例来保存class及interface的所有信息；  
+
+获取一个class对应的Class实例后，就可以获取该class的所有信息；  
+
+通过Class实例获取class信息的方法称为反射（Reflection）；  
+
+JVM总是动态加载class，可以在运行期根据条件来控制加载class。  
+
 # 通过Class获取字段
 ## 获取Field
 Field getField(name)：根据字段名获取某个***public***的field（包括父类）  
@@ -88,7 +97,7 @@ public final class String {
 Object targetObject = new targetClass(); //目标类的实例
 Class clsOfTargetObject = targetObject.getClass();
 
-Field fieldOfTargetObject = clsOfTargetObject.getDeclaredName("name");
+Field fieldOfTargetObject = clsOfTargetObject.getDeclaredField("name");
 
 Object value = fieldOfTargetObject.get(targetObject);
 ```
@@ -96,6 +105,18 @@ Object value = fieldOfTargetObject.get(targetObject);
 ```Java
 fieldOfTargetObject.set(originObject,targetValue);
 ```
+
+## Summary
+Java的反射API提供的Field类封装了字段的所有信息：  
+
+通过Class实例的方法可以获取Field实例：getField()，getFields()，getDeclaredField()，getDeclaredFields()；  
+
+通过Field实例可以获取字段信息：getName()，getType()，getModifiers()；  
+
+通过Field实例可以读取或设置某个对象的字段，如果存在访问限制，要首先调用setAccessible(true)来访问非public字段。  
+
+通过反射读写字段是一种非常规方法，它会破坏对象的封装。  
+
 
 # 通过Class调用方法(Method)
 
@@ -117,28 +138,8 @@ Object value = method.invke(object,args);
 ```
 调用静态方法时，obj设置为***null***即可
 
-# Summary
-## Class
-JVM为每个加载的class及interface创建了对应的Class实例来保存class及interface的所有信息；  
+## Summary
 
-获取一个class对应的Class实例后，就可以获取该class的所有信息；  
-
-通过Class实例获取class信息的方法称为反射（Reflection）；  
-
-JVM总是动态加载class，可以在运行期根据条件来控制加载class。  
-
-## getField() && getDeclaredMethod()
-Java的反射API提供的Field类封装了字段的所有信息：  
-
-通过Class实例的方法可以获取Field实例：getField()，getFields()，getDeclaredField()，getDeclaredFields()；  
-
-通过Field实例可以获取字段信息：getName()，getType()，getModifiers()；  
-
-通过Field实例可以读取或设置某个对象的字段，如果存在访问限制，要首先调用setAccessible(true)来访问非public字段。  
-
-通过反射读写字段是一种非常规方法，它会破坏对象的封装。  
-
-## getMethod() && getDeclaredMethod()
 Java的反射API提供的Method对象封装了方法的所有信息：
 
 通过Class实例的方法可以获取Method实例：getMethod()，getMethods()，getDeclaredMethod()，getDeclaredMethods()；  
@@ -150,3 +151,43 @@ Java的反射API提供的Method对象封装了方法的所有信息：
 通过设置setAccessible(true)来访问非public方法；  
 
 通过反射调用方法时，仍然遵循多态原则。  
+
+# 通过Class调用构造方法
+```Java
+Object object = objCls.newInstance();
+
+// 通过Constructor
+Constructor objCons = objCls.getConstructor(Args.class);
+ValueObj value = objCons.newInstance(args);
+```
+## Summary
+通过Class实例获取Constructor的方法如下：  
+getConstructor(Class...)：获取某个public的Constructor；  
+getDeclaredConstructor(Class...)：获取某个Constructor；  
+getConstructors()：获取所有public的Constructor；  
+getDeclaredConstructors()：获取所有Constructor。  
+注意Constructor总是当前类定义的构造方法，和父类无关，因此不存在多态的问题。  
+调用非public的Constructor时，必须首先通过setAccessible(true)设置允许访问。setAccessible(true)可能会失败。  
+
+# 获取父类Class
+一般对Class实例使用
+```
+getSuperclass()
+```
+获取其父类的Class实例
+***除了Object外，其他的任何非interface的Class都必定存在一个父类型***
+getInterfaces只返回当前类所直接实现的所有接口，不包含其父类实现的接口  
+对interface的Class调用getSuperclass()则只会返回null，要得到其父接口需要调用getInterfaces()  
+
+## 判断转型
+```Java
+// Integer i = ?
+Integer.class.isAssignableFrom(Integer.class); // true，因为Integer可以赋值给Integer
+// Number n = ?
+Number.class.isAssignableFrom(Integer.class); // true，因为Integer可以赋值给Number
+// Object o = ?
+Object.class.isAssignableFrom(Integer.class); // true，因为Integer可以赋值给Object
+// Integer i = ?
+Integer.class.isAssignableFrom(Number.class); // false，因为Number不能赋值给Integer
+```
+

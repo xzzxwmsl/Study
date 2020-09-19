@@ -47,5 +47,6 @@ public class GetMethod {
         privateMethod.setAccessible(true); // 设置私有方法为可访问
         System.out.println(privateMethod.invoke(student));
 
+        
     }
 }

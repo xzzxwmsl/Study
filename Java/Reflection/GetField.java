@@ -1,5 +1,4 @@
 package reflection;
-import java.lang.module.ModuleDescriptor.Modifier;
 import java.lang.reflect.Field;
 
 public class GetField {
@@ -40,24 +39,3 @@ public class GetField {
     }
 }
 
-class People {
-    public String name;
-    protected int age;
-    String sex;
-    private String country;
-
-    People(String country) {
-        this.country = country;
-    }
-}
-
-class Student extends People {
-    public String classroom;
-    private String grade;
-    int money;
-    protected String next;
-
-    Student(String s) {
-        super(s);
-    }
-}

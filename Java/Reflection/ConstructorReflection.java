@@ -16,8 +16,7 @@ public class ConstructorReflection {
         Constructor stuCons2 = studentCls.getConstructor(String.class);
         Object student3 = stuCons2.newInstance("中国");
         System.out.println(student3);
-        // System.out.println((Student)student3.getCountry());// 错误强制转义法
-        System.out.println(((Student)student3).getCountry());
+        // System.out.println((Student)student3.getCountry()); // 错误的强制转义法
+        System.out.println(((Student) student3).getCountry()); // 正确的强制转义法
     }
-
 }

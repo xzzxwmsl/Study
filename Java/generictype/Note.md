@@ -62,4 +62,64 @@ public interface Comparable<T> {
 }
 ```
 
-如果自定义的类要实现Arrays.sort()的功能，那么就要实现Comparable<T>这个接口
+如果自定义的类要实现Arrays.sort()的功能，那么就要实现Comparable\<T>这个接口
+
+---
+
+## 编写泛型
+***静态方法：*** 编写泛型类时，要特别注意，泛型类型\<T>不能用于静态方法。例如：
+```Java
+public class Pair<T> {
+    private T first;
+    private T last;
+    public Pair(T first, T last) {
+        this.first = first;
+        this.last = last;
+    }
+    public T getFirst() { ... }
+    public T getLast() { ... }
+
+    // 对静态方法使用<T>:
+    public static Pair<T> create(T first, T last) {
+        return new Pair<T>(first, last);
+    }
+}
+```
+
+对于静态方法，我们可以单独改写为“泛型”方法，只需要使用另一个类型即可。对于上面的create()静态方法，我们应该把它改为另一种泛型类型，例如，\<K>：
+```Java
+public class Pair<T> {
+    private T first;
+    private T last;
+    public Pair(T first, T last) {
+        this.first = first;
+        this.last = last;
+    }
+    public T getFirst() { ... }
+    public T getLast() { ... }
+
+    // 静态泛型方法应该使用其他类型区分:
+    public static <K> Pair<K> create(K first, K last) {
+        return new Pair<K>(first, last);
+    }
+}
+```
+
+### 多个泛型类型
+泛型还可以定义多种类型。例如，我们希望Pair不总是存储两个类型一样的对象，就可以使用类型\<T, K>：  
+```Java
+public class Pair<T, K> {
+    private T first;
+    private K last;
+    public Pair(T first, K last) {
+        this.first = first;
+        this.last = last;
+    }
+    public T getFirst() { ... }
+    public K getLast() { ... }
+}
+```
+使用时：
+```Java
+Pair<String, Integer> p = new Pair<>("test", 123);
+```
